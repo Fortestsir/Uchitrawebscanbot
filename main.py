@@ -64,11 +64,7 @@ def scan(msg):
     conn.commit()
     conn.close()
 
-    bot.send_message(msg.chat.id, f"Scan result:
-
-{result[:4000]}")
-
-@bot.message_handler(commands=["buypro"])
+    @bot.message_handler(commands=["buypro"])
 def buy_pro(msg):
     text = """**Pro Plan – ₹99/month**
 
@@ -81,6 +77,7 @@ Admin will approve your plan shortly."""
         msg.chat.id,
         text,
         parse_mode="Markdown"
+    )
     )
 def buy_pro(msg):
     bot.send_message(
